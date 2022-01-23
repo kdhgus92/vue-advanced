@@ -7,10 +7,11 @@ import {
 } from '../api/index.js';
 
 export default {
-  FETCH_NEWS({ commit }) {
+  FETCH_NEWS(context) {
     fetchNewsList()
-      .then(({ data }) => {
-        commit('SET_NEWS', data);
+      .then(response => {
+        context.commit('SET_NEWS', response.data);
+        return response;
       })
       .catch(error => {
         console.log(error);
@@ -20,6 +21,7 @@ export default {
     fetchAskList()
       .then(response => {
         context.commit('SET_ASK', response.data);
+        return resposne;
       })
       .catch(error => {
         console.log(error);
@@ -29,6 +31,7 @@ export default {
     fetchJobsList()
       .then(response => {
         context.commit('SET_JOBS', response.data);
+        return response;
       })
       .catch(error => {
         console.log(error);
