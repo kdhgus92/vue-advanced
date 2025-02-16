@@ -12,7 +12,7 @@ export default new Vuex.Store({
     jobs: [],
     ask: [],
     user: {},
-    item: [],
+    item: {},
   },
   getters: {
     fetchedAsk(state) {
