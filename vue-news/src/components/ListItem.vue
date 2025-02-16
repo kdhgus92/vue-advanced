@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="news-list">
-      <li v-for="item in ListItems" v-bind:key="item.index" class="post">
+      <li v-for="item in listItems" v-bind:key="item.index" class="post">
         <!-- 포인트 영역 -->
         <div class="points">
           <i class="fas fa-caret-up"></i>
@@ -54,7 +54,7 @@ export default {
     }
   },
   computed: {
-    ListItems() {
+    listItems() {
       const name = this.$route.name;
       if (name === "news") {
         return this.$store.state.news;
@@ -62,6 +62,8 @@ export default {
         return this.$store.state.ask;
       } else if (name === "jobs") {
         return this.$store.state.jobs;
+      } else {
+        return []; // 에러 방지용
       }
     },
   },
