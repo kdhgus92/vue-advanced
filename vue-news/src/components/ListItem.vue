@@ -4,7 +4,6 @@
       <li v-for="item in listItems" v-bind:key="item.index" class="post">
         <!-- 포인트 영역 -->
         <div class="points">
-          <i class="fas fa-caret-up"></i>
           {{ item.points || 0 }}
         </div>
         <!-- 기타 정보 영역 -->
@@ -45,6 +44,7 @@
 export default {
   computed: {
     listItems() {
+      console.log(this);
       return this.$store.state.list;
     },
   },
@@ -67,7 +67,7 @@ export default {
   height: 60px;
   display: flex;
   align-items: center;
-  justify-self: center;
+  justify-content: center;
   color: #42b883;
 }
 .news-title {

@@ -9,9 +9,9 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   strict: process.env.NODE_ENV !== "production",
   state: {
-    news: [],
-    jobs: [],
-    ask: [],
+    // news: [],
+    // jobs: [],
+    // ask: [],
     user: {},
     item: {},
     list: [],
